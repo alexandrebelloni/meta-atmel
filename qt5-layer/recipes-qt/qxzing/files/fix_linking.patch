@@ -1,0 +1,27 @@
+diff --git a/examples/QMLBarcodeScanner/QMLBarcodeReader.pro b/examples/QMLBarcodeScanner/QMLBarcodeReader.pro
+index e14e7e1..eee7ea3 100644
+--- a/examples/QMLBarcodeScanner/QMLBarcodeReader.pro
++++ b/examples/QMLBarcodeScanner/QMLBarcodeReader.pro
+@@ -21,6 +21,7 @@ SOURCES += $$PWD/qmlcamera.cpp
+ else:TARGET = QMLBarcodeReader
+ 
+ RESOURCES += declarative-camera.qrc
++LIBS += -lQZXing
+ 
+ symbian {
+     TARGET.CAPABILITY = UserEnvironment NetworkServices Location ReadUserData WriteUserData
+diff --git a/examples/QMLBarcodeScanner/qmlcamera.cpp b/examples/QMLBarcodeScanner/qmlcamera.cpp
+index e990b2a..7e69e45 100644
+--- a/examples/QMLBarcodeScanner/qmlcamera.cpp
++++ b/examples/QMLBarcodeScanner/qmlcamera.cpp
+@@ -38,8 +38,8 @@
+ **
+ ****************************************************************************/
+ 
+-#include <QtGui/QApplication>
+-#include <QtGui/QDesktopWidget>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QDesktopWidget>
+ #include <QtDeclarative/QDeclarativeView>
+ #include <QtDeclarative/QDeclarativeEngine>
+ 

@@ -1,0 +1,29 @@
+diff --git a/source/QZXing.h b/source/QZXing.h
+index 131502d..8341fb8 100644
+--- a/source/QZXing.h
++++ b/source/QZXing.h
+@@ -5,11 +5,7 @@
+ #include <QObject>
+ #include <QImage>
+ 
+-#if QT_VERSION >= 0x040700 && QT_VERSION < 0x050000
+ #include <QtDeclarative>
+-#elif QT_VERSION >= 0x050000
+-#include <QtQml/qqml.h>
+-#endif
+ 
+ // forward declaration
+ namespace zxing {
+diff --git a/source/QZXing.pri b/source/QZXing.pri
+index c835521..9b67c31 100644
+--- a/source/QZXing.pri
++++ b/source/QZXing.pri
+@@ -1,7 +1,4 @@
+-QT       += core gui widgets
+-
+-greaterThan(QT_VERSION, 4.7): lessThan(QT_VERSION, 5.0): QT += declarative
+-greaterThan(QT_MAJOR_VERSION, 4): QT += quick
++QT       += core gui widgets declarative
+ 
+ DEFINES += QZXING_LIBRARY \
+         ZXING_ICONV_CONST \
